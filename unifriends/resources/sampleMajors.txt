@@ -1,0 +1,10 @@
+Information Systems & Technololgy,
+Business Administration,
+English,
+Accounting,
+Economics,
+Computer Science,
+Biology,
+Political Science,
+Physics,
+Mechancical Engineering
