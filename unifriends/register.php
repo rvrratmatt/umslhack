@@ -12,9 +12,47 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
-    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
-        $username_err = "Username can only contain letters, numbers, and underscores.";
-    } else{
+    } 
+    if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", trim($_POST["username"]))&& $username_err ==""){
+        $username_err = "Your username is not a valid email address.";
+    } 
+    if($username_err == ""){
+    $email = isset($_POST['username']) ? trim($_POST['username']) : null;
+
+// List of allowed domains
+        $allowed = [
+        'mail.umsl.edu',
+        'archive.umsl.edu',
+        'mail.missouri.edu',
+        'mailmissouri.mail.onmicrosoft.com',
+        'missouri.edu',
+        'umsl.edu',
+        'umsystem.edu'
+
+    ];
+
+// Make sure the address is valid
+if (filter_var($email, FILTER_VALIDATE_EMAIL))
+{
+    // Separate string by @ characters (there should be only one)
+    $parts = explode('@', $email);
+
+    // Remove and return the last part, which should be the domain
+    $domain = array_pop($parts);
+
+    // Check if the domain is in our list
+    if ( ! in_array($domain, $allowed))
+    {
+        $username_err = " Your email is not a valid University of Missouri - St. Louis address.";
+        // Not allowed
+    }
+    }
+    }
+    if($username_err == "")
+    {
+        // Make sure we have input
+// Remove extra white space if we do
+
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
         
