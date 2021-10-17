@@ -12,48 +12,86 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html>
 <head>
 <title>Page Title</title>
+<meta charset="utf-8">
+<style type="text/css">
+h1,h2,h3,h4,h5,h6 {
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
+}
+body,td,th {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+	font-style: inherit;
+	font-weight: 300;
+	color: #000000;
+	font-size: 18px;
+}
+h1 {
+	color: #BB1114;
+}
+h2 {
+	color: #000000;
+}
+h3 {
+	color: #000000;
+}
+h4 {
+	color: #000000;
+}
+h5 {
+	color: #000000;
+}
+h6 {
+	color: #000000;
+}
+</style>
 </head>
-<body>
-
-<h1>Lets Get To Know You</h1>
-
+<body text="#BB1114">
+<div style="text-align: center;">&nbsp;
+<h1><img src="../../Users/Stephanie/Downloads/Uni (1).png" width="400" height="400" alt=""/>
+<p> Let's Get To Know You</h1>
 <br>
 
 <form>
-What is your First Name? 
-<input type="text" name="Fname">
+  <p>What is your First Name?  </p>
+  <p><br>
 
-<br>
-<br>
-
-
-What is your Last Name? 
-<input type="text" name="Fname">
+    <input type="text" name="Fname">
+   
+	 <br>
+    <br>
+    
+    
+  What is your Last Name?</p>
+   <br>
+  <input type="text" name="Fname">
+ 
+  
 </form>
 
-<br>
-
-
-What is your Major? 
-<input type="text" name="Fname">
-</form>
-
-<br>
-<br>
-
-
-What is your Expected Graduation Year? 
-<input type="text" name="Fname">
-
-<br>
-<br>
-
-
-What is your Student Classification? 
-<input type="text" name="Fname">
-
-<br>
-
+<p><br>
+  
+  
+What is your Major?</p>
+<p> <br>
+  <input type="text" name="Fname">
+  </form>
+  
+  <br>
+  <br>
+  
+  
+What is your Expected Graduation Year?
+<p> <br>
+  <input type="text" name="Fname">
+  
+  <br>
+  <br>
+  
+  
+What is your Student Classification?
+<p> <br>
+  <input type="text" name="Fname">
+  
+  <br>
 <p>Do you live On or Off campus?</p>
 <select>
 	<option value="">Select your option</option>
@@ -64,13 +102,18 @@ What is your Student Classification?
 </form>
 
 
-<p>What is your Social Media Preference?</p>
+<p>Link your social media </p>
 <ul>
+<span dir="ltr">
+  <p><br>
+  </p>
+  </span>
   
 </ul>
 
 <head>
-<style>
+<p>
+  <style>
 
 table {
  
@@ -86,10 +129,12 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
-</head>
-<body>
+  </head>
+  <body><div style="text-align: center;">&nbsp;
 
-<table>
+ </p>
+
+<table style="margin-left:auto;margin-right:auto;">
   <tr>
     <th>Social Media</th>
     <th>Username</th>
@@ -124,7 +169,7 @@ tr:nth-child(even) {
     
   </tr>
 </table>
-
+	  
 </body>
 </html>
 
